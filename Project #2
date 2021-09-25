@@ -34,7 +34,7 @@ void findTwoLargest(int *arr , int n, int *first , int *second) {
   	int k = 0;
     int prevBiggest = 0;
     int firstBiggest,secondBiggest = 0;
-    	*first = *arr;
+    	*second = *arr;
     	*second = *arr;
     //  printf("%d, ", *first);
 
