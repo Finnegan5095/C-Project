@@ -1,0 +1,78 @@
+
+//Matthew Coffey - Partner: Finnegan McGlothlin - Lab 12
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+
+bool isPtrOnArray(int * p, int *arr, int n) {
+    int i,count = 0;
+
+        for (i = 0; i < n; i++) {
+
+          if (arr == p) {
+            count++;
+          }
+
+          *arr++;
+        }
+
+      if (count != 0) {
+        return true;
+      }
+      if (count == 0) {
+        return false;
+      }
+}
+
+void findTwoLargest(int *arr , int n, int *first , int *second) {
+//printf("%d", &first);
+    int i = 0;
+    int j = 0;
+  	int k = 0;
+    int prevBiggest = 0;
+    int firstBiggest,secondBiggest = 0;
+    	*first = *arr;
+    	*second = *arr;
+    //  printf("%d, ", *first);
+
+        for (i = 0; i < n; i++) {
+      //    printf("it ran");
+           if(*arr > *first) {
+            //  printf("%d, ", *arr);
+              *first = *arr;
+            //  printf("%d, ", *first);
+        		//	*arr++;
+        		//	continue;
+           }
+
+           if (*arr < *first) {
+        		 if (*arr >= *second) {
+        			  *second = *arr;
+        		//	  *arr++;
+        			 }
+            }
+          *arr++;
+		    }
+
+}
+
+
+int main (void) {
+  //part 1
+  int a[5] = {1,2,3,4,5};
+  int x = 0;
+  printf("on array? %s\n", (isPtrOnArray(&a[4],a,5)?"yes":"no"));
+  printf("on array? %s\n", (isPtrOnArray(&x,a,5)?"yes":"no"));
+
+  //part 2
+  int first, second = 0;
+  int b[9] = {2,91,22,123,12,500,32,7,300};
+  int c[5] = {2,2,2,2,2};
+  findTwoLargest(b,9,&first,&second);
+  printf("Largest = %d, Second = %d\n", first, second);
+  findTwoLargest(c,5,&first,&second);
+  printf("Largest = %d, Second = %d\n", first, second);
+
+  return 0;
+}
