@@ -27,6 +27,8 @@ bool isPtrOnArray(int * p, int *arr, int n) {
 
 void findTwoLargest(int *arr , int n, int *first , int *second) {
 //printf("%d", &first);
+
+//Here
     int i = 0;
     int j = 0;
   	int k = 0;
